@@ -4,8 +4,10 @@
 #include<algorithm>
 using namespace std;
 struct compare{
-    bool operator()(int lsh, int rsh)
-    {
+    bool operator()(const string& lsh, const string& rsh)
+    {   
+        return (lsh + rsh > rsh + lsh ? true : false);
+        /*
         if (lsh == rsh)
             return true;
         
@@ -38,18 +40,18 @@ struct compare{
             }
         }
 
-        return lDigit == 0 ? true : false;
-    }
+        return lDigit == 0 ? true : false; */
+    } 
 };
     string minNumber(vector<int>& nums) {
         if(nums.size() == 0)
             return "";
-        sort(nums.begin(), nums.end(), compare());
+        vector<string> vecStr;
         string s;
         for(auto  ref : nums){
-            s += to_string(ref);
-            cout << ref << endl;
+            vecStr.push_back(to_string(ref));
         }
+        sort(vecStr.begin(), vecStr.end(), compare());
 
         int iIndex = 0;
         while(s[iIndex] == '0')
