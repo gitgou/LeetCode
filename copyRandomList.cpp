@@ -19,7 +19,7 @@ public:
     //哈希表 + 回溯 绝了 通过两条链子往下创建，直到返回nullptr
     Node* copyRandomList(Node* head)
     {
-        unordered_map<Node*, Node*> mapNode;
+        static unordered_map<Node*, Node*> mapNode;
         //使用 unordermap，查找o(1)
         if(!head)
         {
