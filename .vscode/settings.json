@@ -64,5 +64,6 @@
         "utility": "cpp",
         "vector": "cpp",
         "list": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
